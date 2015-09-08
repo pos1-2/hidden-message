@@ -32,6 +32,9 @@ import java.util.Random;
 import java.util.Set;
 
 public class Main {
+
+	private static final String CLASS_NAME = "CodeGen";
+
 	private static abstract class Variable {
 		private final String name;
 		protected final char character;
@@ -187,9 +190,9 @@ public class Main {
 		try (InputStreamReader isr = new InputStreamReader(new FileInputStream("input.txt"))) {
 			int c;
 
-			System.out.println("public class CodeGen {");
+			System.out.println("public class " + CLASS_NAME + " {");
 
-			System.out.println("public CodeGen() {");
+			System.out.println("public " + CLASS_NAME + "() {");
 			System.out.println("set();");
 			System.out.println("print();");
 			System.out.println("}");
