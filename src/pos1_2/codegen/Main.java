@@ -187,17 +187,21 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 
+		System.out.println("public class " + CLASS_NAME + " {");
+
+		System.out.println("public " + CLASS_NAME + "() {");
+		System.out.println("set();");
+		System.out.println("print();");
+		System.out.println("}");
+
+		System.out.println("public static void main (String [] args) {");
+		System.out.println("new " + CLASS_NAME + "();");
+		System.out.println("}");
+
+		System.out.println("private void print() {");
+
 		try (InputStreamReader isr = new InputStreamReader(new FileInputStream("input.txt"))) {
 			int c;
-
-			System.out.println("public class " + CLASS_NAME + " {");
-
-			System.out.println("public " + CLASS_NAME + "() {");
-			System.out.println("set();");
-			System.out.println("print();");
-			System.out.println("}");
-
-			System.out.println("private void print() {");
 
 			while ((c = isr.read()) != -1) {
 				Variable v = Variable.randomVariable((char) c);
